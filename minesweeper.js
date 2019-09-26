@@ -7,8 +7,12 @@ var board = {
 createBoard = () => {
   for (var i = 0; i < 5; i++) {
     for (var j = 0; j < 5; j++) {
-      board.cells.push({ row: i, col: j, isMine: Boolean(Math.floor(Math.random() * 1.1)), 
-        isMarked: false, hidden: true })
+      board.cells.push({ 
+        row: i, 
+        col: j, 
+        isMine: Boolean(Math.floor(Math.random() * 1.1)), 
+        isMarked: false, 
+        hidden: true })
     }
   }
 }
