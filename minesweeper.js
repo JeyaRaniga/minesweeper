@@ -16,11 +16,15 @@ createBoard = () => {
     }
   }
 }
-createBoard()
 
-function startGame () {
+startGame =() =>{
   // Don't remove this function call: it makes the game work!
+  createBoard()
   lib.initBoard()
+  board.cells.forEach(cell=> {
+    cell.surroundingMines = countSurroundingMines(cell);
+   }
+    )
   document.addEventListener("click", checkForWin);
   document.addEventListener("contextmenu", checkForWin);
 }
