@@ -16,10 +16,13 @@ createBoard = () => {
     }
   }
 }
+createBoard()
 
 function startGame () {
   // Don't remove this function call: it makes the game work!
   lib.initBoard()
+  document.addEventListener("click", checkForWin);
+  document.addEventListener("contextmenu", checkForWin);
 }
 
 // Define this function to look for a win condition:
@@ -38,6 +41,7 @@ checkForWin = () => {
         return
       }
     }
+    lib.displayMessage ('You win!')
 }
 
 // Define this function to count the number of mines around the cell
