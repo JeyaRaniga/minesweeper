@@ -1,5 +1,4 @@
-document.addEventListener('DOMContentLoaded', startGame)
-
+// Moved the event listener after startGame is defined.
 // Define your `board` object here!
 var board = {
   cells: []
@@ -17,7 +16,7 @@ createBoard = () => {
   }
 }
 
-startGame =() =>{
+startGame = () => {
   // Don't remove this function call: it makes the game work!
   createBoard()
   lib.initBoard()
@@ -28,6 +27,8 @@ startGame =() =>{
   document.addEventListener("click", checkForWin);
   document.addEventListener("contextmenu", checkForWin);
 }
+
+document.addEventListener('DOMContentLoaded', startGame)
 
 // Define this function to look for a win condition:
 //
@@ -53,6 +54,7 @@ checkForWin = () => {
 // cells yourself! Just use `lib.getSurroundingCells`: 
 //
 //   var surrounding = lib.getSurroundingCells(cell.row, cell.col)
+//   add var count
 //
 // It will return cell objects in an array. You should loop through 
 // them, counting the number of times `cell.isMine` is true.
