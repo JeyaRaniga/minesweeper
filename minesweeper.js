@@ -17,9 +17,10 @@ document.getElementById("hard").addEventListener("click", ()=>  {hardLevel()}, f
 
 function resetBoard () {
     document.getElementsByClassName('board')[0].innerHTML = '';
-    board = {};
+    board = {
+      cells: []
+    }
 }
-
 
 function easyLevel() {
   resetBoard()
@@ -56,13 +57,13 @@ function createBoard () {
 function startGame () {
   // Don't remove this function call: it makes the game work!
   createBoard()
-  lib.initBoard()
-  board.cells.forEach(cell=> {
+    board.cells.forEach(cell=> {
     cell.surroundingMines = countSurroundingMines(cell);
    }
     )
   document.addEventListener("click", checkForWin);
   document.addEventListener("contextmenu", checkForWin);
+  lib.initBoard()
 }
 
 
