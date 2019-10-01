@@ -3,13 +3,28 @@
 var board = {
   cells: []
 }
+
+//difficulty levels- easy - 5, medium-6, hard- 7
+//create a global variable difficulty
+var difficulty = 4
+
 createBoard = () => {
-  for (var i = 0; i < 5; i++) {
-    for (var j = 0; j < 5; j++) {
+  document.querySelector("#easy").addEventListener("click", () => {
+    difficulty += 1
+  })
+  document.querySelector("#medium").addEventListener("click", ()=> {
+    difficulty += 2
+  })
+  document.querySelector("#hard").addEventListener("click", ()=>  {
+    difficulty +=3 
+  })
+
+  for (var i = 0; i < difficulty; i++) {
+    for (var j = 0; j < difficulty; j++) {
       board.cells.push({ 
         row: i, 
         col: j, 
-        isMine: Boolean(Math.floor(Math.random() * 1.1)), 
+        isMine: Boolean(Math.floor(Math.random() * 1.5)), 
         isMarked: false, 
         hidden: true })
     }

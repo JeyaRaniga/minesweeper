@@ -8,6 +8,7 @@ body {
   align-items: center;
   justify-content: flex-center;
   flex-direction: column;
+  background-color: aquamarine;
 }
 
 #message, #notes {
@@ -57,4 +58,22 @@ div.hidden:hover {
 
 div.marked, div.marked:hover {
   background: no-repeat center/60% url("images/mark.svg") deepskyblue;
+}
+
+button {
+  background-color: green;
+  height: 40px;
+  width: auto;
+  border-radius: 5px 5px 5px 5px;
+  font-size: 120%
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-center;
+  flex-direction: column;
+  background-color: aquamarine;
+  padding: 20px;
+  
 }
