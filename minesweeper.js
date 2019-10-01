@@ -1,4 +1,6 @@
-// Moved the event listener after startGame is defined.
+"use strict"
+document.addEventListener('DOMContentLoaded', startGame)
+
 // Define your `board` object here!
 var board = {
   cells: []
@@ -6,22 +8,22 @@ var board = {
 
 //difficulty levels- easy - 5, medium-6, hard- 7
 //create a global variable difficulty
-
-
-
-createBoard = () => {
-
-let difficulty = 4;
+var difficulty = 4;
 document.getElementById("easy").addEventListener("click", () => {
-  difficulty += 1;
+  difficulty = 4
 });
 document.getElementById("medium").addEventListener("click", ()=> {
-  difficulty += 2;
+  difficulty = 5
 });
 document.getElementById("hard").addEventListener("click", ()=>  {
-  difficulty +=3;
+  difficulty = 6
 });
 
+function resetBoard () {
+  
+}
+
+function createBoard () {
   for (var i = 0; i < difficulty; i++) {
     for (var j = 0; j < difficulty; j++) {
       board.cells.push({ 
@@ -34,7 +36,7 @@ document.getElementById("hard").addEventListener("click", ()=>  {
   }
 }
 
-startGame = () => {
+function startGame () {
   // Don't remove this function call: it makes the game work!
   createBoard()
   lib.initBoard()
@@ -46,17 +48,17 @@ startGame = () => {
   document.addEventListener("contextmenu", checkForWin);
 }
 
-document.addEventListener('DOMContentLoaded', startGame)
+
 
 // Define this function to look for a win condition:
 //
 // 1. Are all of the cells that are NOT mines visible?
 // 2. Are all of the mines marked?
-checkForWin = () => {
+function checkForWin () {
   // You can use this function call to declare a winner (once you've
   // detected that they've won, that is!)
   //   lib.displayMessage('You win!')
-    for (i = 0; i < board.cells.length; i++) {
+    for ( let i = 0; i < board.cells.length; i++) {
       if (board.cells[i].isMine && !board.cells[i].isMarked) {
         return
       }
@@ -76,7 +78,7 @@ checkForWin = () => {
 //
 // It will return cell objects in an array. You should loop through 
 // them, counting the number of times `cell.isMine` is true.
-countSurroundingMines = (cell) => {
+function countSurroundingMines (cell) {
     var surrounding = lib.getSurroundingCells(cell.row, cell.col);
     var count = 0;
     for (var i = 0; i < surrounding.length; i++) {
