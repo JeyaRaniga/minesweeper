@@ -9,19 +9,36 @@ var board = {
 //difficulty levels- easy - 5, medium-6, hard- 7
 //create a global variable difficulty
 var difficulty = 4;
-document.getElementById("easy").addEventListener("click", () => {
-  difficulty = 4
-});
-document.getElementById("medium").addEventListener("click", ()=> {
-  difficulty = 5
-});
-document.getElementById("hard").addEventListener("click", ()=>  {
-  difficulty = 6
-});
+window.onload=function () {
+document.getElementById("easy").addEventListener("click", () => {easyLevel()}, false);
+document.getElementById("medium").addEventListener("click", ()=> {mediumLevel()}, false);
+document.getElementById("hard").addEventListener("click", ()=>  {hardLevel()}, false);
+}
 
 function resetBoard () {
-  
+    document.getElementsByClassName('board')[0].innerHTML = '';
+    board = {};
 }
+
+
+function easyLevel() {
+  resetBoard()
+  difficulty = 4;
+  startGame()
+}
+
+function mediumLevel() {
+  resetBoard()
+  difficulty  = 5;
+  startGame();
+}
+
+function hardLevel() {
+  resetBoard()
+  difficulty  = 6;
+  startGame();
+}
+
 
 function createBoard () {
   for (var i = 0; i < difficulty; i++) {
