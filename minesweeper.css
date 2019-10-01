@@ -1,6 +1,6 @@
 html, body {
   height: 100%;
-  font-family: 'Open Sans', sans-serif
+  font-family: 'Mansalva', cursive;
 }
 
 body {
@@ -31,7 +31,7 @@ body {
   font-size: 2rem;
   width: 75px;
   height: 75px;
-  border: 1px #ccc dotted;
+  border: 1px rgb(63, 56, 56) dashed;
   border-radius: 10%;
   background-color: white;
   margin: 3px;
@@ -61,19 +61,25 @@ div.marked, div.marked:hover {
 }
 
 .button {
-  background-color: green;
+  background-color: rgb(187, 176, 176);
+  font-family: 'Mansalva', cursive;
   height: 40px;
   width: auto;
   border-radius: 5px 5px 5px 5px;
   font-size: 120%
 }
 
-.container {
+.box {
   display: flex;
   align-items: center;
-  justify-content: flex-center;
-  flex-direction: column;
+  justify-content: center;
+  flex-direction: row;
   background-color: aquamarine;
-  padding: 20px;
-  
+  padding: 30px;
+}
+
+.divider{
+    widows: 5px;
+    height:auto;
+    display:inline-block;
 }

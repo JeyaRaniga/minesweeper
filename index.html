@@ -2,22 +2,24 @@
 <html>
   <head>
     <title>Minesweeper</title>
+    <link href="https://fonts.googleapis.com/css?family=Mansalva&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="minesweeper.css">
     <script src="lib/tests.js"></script>
     <script src="lib/lib.js"></script>
     <script src="minesweeper.js"></script>
   </head>
   <body>
-    <div id="message"></div>
-    <div id="notes"></div>
-    <div class="board"></div>
-      <input type="button" id= "restart" onclick="window.location.href = window.location.href" class="button" value="Reset">
+      <div id="message"></div>
+      <div id="notes"></div>
+      <div class="board"></div>
       <br>
-       <div class="box">
-        <input type="button" id="easy" value="Easy" class="button">
-        <input type="button" id="medium" value="Medium" class="button">
-        <input type="button" id="hard" value="Hard" class="button">
+        <input type="button" id= "restart" onclick="window.location.href = window.location.href" class="button" value="Reset">
+        <br>
+        <div class="box">
+          <div class="divider"><input type="button" id="easy" value="Easy" class="button"></div>
+          <div class="divider"><input type="button" id="medium" value="Medium" class="button"></div>
+          <div class="divider"><input type="button" id="hard" value="Hard" class="button"></div>
+        </div>
       </div>
-    </div>
   </body>
 </html>
