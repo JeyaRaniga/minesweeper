@@ -6,18 +6,21 @@ var board = {
 
 //difficulty levels- easy - 5, medium-6, hard- 7
 //create a global variable difficulty
-var difficulty = 4
+
+
 
 createBoard = () => {
-  document.querySelector("#easy").addEventListener("click", () => {
-    difficulty += 1
-  })
-  document.querySelector("#medium").addEventListener("click", ()=> {
-    difficulty += 2
-  })
-  document.querySelector("#hard").addEventListener("click", ()=>  {
-    difficulty +=3 
-  })
+
+let difficulty = 4;
+document.getElementById("easy").addEventListener("click", () => {
+  difficulty += 1;
+});
+document.getElementById("medium").addEventListener("click", ()=> {
+  difficulty += 2;
+});
+document.getElementById("hard").addEventListener("click", ()=>  {
+  difficulty +=3;
+});
 
   for (var i = 0; i < difficulty; i++) {
     for (var j = 0; j < difficulty; j++) {

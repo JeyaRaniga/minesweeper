@@ -60,7 +60,7 @@ div.marked, div.marked:hover {
   background: no-repeat center/60% url("images/mark.svg") deepskyblue;
 }
 
-button {
+.button {
   background-color: green;
   height: 40px;
   width: auto;
